@@ -1,24 +1,19 @@
-# domain-checkr
-script for checking domain availability with GoDaddy API
-
-
 # GoDaddy Domain Availability Checker
 
-A Python script that checks the availability of domain names using the GoDaddy API. It generates all possible letter combinations of a specified length and checks their availability across multiple TLDs (Top-Level Domains).
+A Python script that checks the availability of domain names using the GoDaddy API. It generates all possible letter combinations of a specified length and checks their availability across multiple TLDs (Top-Level Domains) eg. .com, .io, .org.
 
 ## Features
 
-- 🔤 Generate all possible letter combinations (a-z) of any length
-- 🌐 Check multiple TLDs simultaneously (.com, .io, .dev, etc.)
-- 📦 Batch processing to optimize API calls
-- 💾 Export results to JSON format
-- ⚡ Rate limiting to respect API constraints
-- 🔐 Secure credential management with environment variables
+-  Generate all possible letter combinations (a-z) of any length
+-  Check multiple TLDs simultaneously (.com, .io, .org, etc.)
+-  Batch processing to optimize API calls
+-  Export results to JSON format
+-  Rate limiting to respect API constraints
 
 ## Prerequisites
 
 - Python 3.7 or higher
-- GoDaddy API credentials (API Key and Secret)
+- GoDaddy API credentials (API Key and Secret) 
 - pip (Python package manager)
 
 ## Installation
