@@ -53,7 +53,7 @@ A Python script that checks the availability of domain names using the GoDaddy A
 5. Choose **OTE (Test Environment)** for testing or **Production** for live checks
 6. Copy your API Key and Secret to your `.env` file
 
-> ⚠️ **Note**: This script uses the OTE (test) endpoint by default. For production use, change the API URL in the code to https://api.godaddy.com/v1/domains/available.
+> ⚠️ **Note**: This script uses the OTE (test) endpoint by default. For production use, change the API URL in the code to [This](https://api.godaddy.com/v1/domains/available).
 
 ## Usage
 
