@@ -1,4 +1,4 @@
-# GoDaddy Domain Availability Checker
+# GoDaddy Domain Availability Checking script
 
 A Python script that checks the availability of domain names using the GoDaddy API. It generates all possible letter combinations of a specified length and checks their availability across multiple TLDs (Top-Level Domains) eg. .com, .io, .org.
 
@@ -20,8 +20,8 @@ A Python script that checks the availability of domain names using the GoDaddy A
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/godaddy-domain-checker.git
-   cd godaddy-domain-checker
+   git clone https://github.com/yourusername/godaddy-domain-checkr.git
+   cd godaddy-domain-checkr
    ```
 
 2. **Install required dependencies**
@@ -107,21 +107,19 @@ The script generates an `available.json` file with the following structure:
 During execution, you'll see real-time status updates:
 
 ```
-🧩 Config: 3-letter combos | TLDs: .com, .io
-🧮 17,576 possible combinations
+ Config: 3-letter combos | TLDs: .com, .io
+ 17,576 possible combinations
 
-🔍 Checking .com domains...
-🟢 Available: xyz.com
-🔴 Taken: abc.com
-⏳ Processed 50/17576 for .com
+ Checking .com domains...
+ Progress: 2240/17576 for .com
 ```
 
 ## Configuration
 
 You can modify these constants in the script:
 
-- `BATCH_SIZE`: Number of domains to check per API call (default: 50)
-- `DELAY`: Delay between batches in seconds (default: 2)
+- `BATCH_SIZE`: Number of domains to check per API call (default: 80)
+- `DELAY_SECONDS`: Delay between batches in seconds (default: 5)
 
 ## Performance Considerations
 
@@ -129,72 +127,32 @@ You can modify these constants in the script:
 - **4-letter combinations**: 456,976 domains (a-z⁴)
 - **5-letter combinations**: 11,881,376 domains (a-z⁵)
 
-With the default settings (50 domains per batch, 2-second delay):
-- 3-letter check: ~12 minutes per TLD
-- 4-letter check: ~5 hours per TLD
-- 5-letter check: ~131 hours per TLD
 
 ## Troubleshooting
 
 ### Missing API Credentials
 ```
-❌ Missing GoDaddy API credentials in .env file
+ Missing GoDaddy API credentials in .env file
 ```
 **Solution**: Ensure your `.env` file exists and contains valid credentials.
 
 ### API Rate Limiting
 ```
-⚠️ API Error: Rate limit exceeded
+ API Error: Rate limit exceeded
 ```
-**Solution**: Increase the `DELAY` value in the script or reduce `BATCH_SIZE`.
+**Solution**: Increase the `DELAY_SECONDS` value in the script or reduce `BATCH_SIZE`.
 
 ### Invalid Number of Letters
 ```
-❌ Invalid number of letters. Example: python lookup.py 3 .com,.io
+ Invalid number of letters. Example: python lookup.py -3 .com,.io
 ```
 **Solution**: Provide a valid positive integer as the first argument.
-
-## Security Best Practices
-
-- ✅ Never commit your `.env` file to version control
-- ✅ Add `.env` to your `.gitignore` file
-- ✅ Use OTE environment for testing
-- ✅ Rotate API keys regularly
-- ✅ Use read-only API keys when possible
-
-## Requirements File
-
-Create a `requirements.txt` file with:
-
-```
-python-dotenv==1.0.0
-requests==2.31.0
-```
-
-## License
-
-MIT License - feel free to use this script for personal or commercial projects.
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## Disclaimer
 
 This script is provided as-is for educational and legitimate business purposes. Always comply with GoDaddy's Terms of Service and API usage policies. The author is not responsible for any misuse of this tool.
 
-## Support
-
-If you encounter any issues or have questions, please open an issue on GitHub.
-
-## Acknowledgments
-
-- Built with the [GoDaddy API](https://developer.godaddy.com/)
-- Environment management via [python-dotenv](https://github.com/theskumar/python-dotenv)
-- HTTP requests via [requests](https://requests.readthedocs.io/)
