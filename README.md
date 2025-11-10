@@ -20,7 +20,7 @@ A Python script that checks the availability of domain names using the GoDaddy A
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/godaddy-domain-checkr.git
+   git clone https://github.com/bakonaanlong/godaddy-domain-checkr.git
    cd godaddy-domain-checkr
    ```
 
